@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungyel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seungyel <lsy2246@naver.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 04:23:48 by seungyel          #+#    #+#             */
-/*   Updated: 2020/10/22 22:19:06 by seungyel         ###   ########.fr       */
+/*   Created: 2020/11/10 21:56:23 by seungyel          #+#    #+#             */
+/*   Updated: 2020/11/17 16:31:10 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = 'a' + (c - 'A');
-	}
-	return (c);
+	return (0);
 }

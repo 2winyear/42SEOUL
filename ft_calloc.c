@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungyel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seungyel <lsy2246@naver.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 04:23:48 by seungyel          #+#    #+#             */
-/*   Updated: 2020/10/22 22:19:06 by seungyel         ###   ########.fr       */
+/*   Created: 2020/10/25 21:09:03 by seungyel          #+#    #+#             */
+/*   Updated: 2020/10/25 21:09:05 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = 'a' + (c - 'A');
-	}
-	return (c);
+	char *arr;
+
+	arr = (char*) malloc(sizeof(char) * count * size);
+	ft_bzero (arr, size * count);
+	return (arr);
 }

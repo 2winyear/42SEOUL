@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungyel <lsy2246@naver.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 20:20:31 by seungyel          #+#    #+#             */
-/*   Updated: 2020/10/21 21:51:54 by seungyel         ###   ########.fr       */
+/*   Created: 2020/11/17 10:31:15 by seungyel          #+#    #+#             */
+/*   Updated: 2020/11/17 12:13:58 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char *str, int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
+	int i;
+	int j;
 	int count;
+	char *arr;
 
-	count = ft_strlen(str);
-	while (count >= 0)
+	i = 0;
+	count = 0;
+	while (s1[i] != '\0')
 	{
-		if (str[count] == c)
-			return (&str[count]);
-		count--;
+		j = 0;
+		if (s1[i] == set[j])
+		{
+			i++;
+			j++;
+		}
+		count++;
 	}
-	return (0);
+	if (!(arr = malloc(sizeof(char) * (count + 1))))
+		return (0);
+	return (arr);
 }

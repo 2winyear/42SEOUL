@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungyel <lsy2246@naver.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 20:20:31 by seungyel          #+#    #+#             */
-/*   Updated: 2020/10/21 21:51:54 by seungyel         ###   ########.fr       */
+/*   Created: 2020/10/27 21:46:21 by seungyel          #+#    #+#             */
+/*   Updated: 2020/10/27 21:50:55 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char *str, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int count;
+	char	*s;
+	int		i;
+	int		j;
 
-	count = ft_strlen(str);
-	while (count >= 0)
+	i = 0;
+	j = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	s = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s)
+		return (0);
+	while (s1[i] != '\0')
 	{
-		if (str[count] == c)
-			return (&str[count]);
-		count--;
+		s[i] = s1[i];
+		i++;
 	}
-	return (0);
+	while (s2[j] != '\0')
+	{
+		s[i] = s2[j];
+		i++;
+		j++;
+	}
+	s[i] = '\0';
+	return (s);
 }

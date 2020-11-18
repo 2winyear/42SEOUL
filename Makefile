@@ -6,28 +6,31 @@
 #    By: seungyel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/10 04:34:57 by seungyel          #+#    #+#              #
-#    Updated: 2020/10/21 20:42:26 by seungyel         ###   ########.fr        #
+#    Updated: 2020/11/17 16:31:51 by seungyel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
 FILES = ft_memset \
 		ft_bzero \
+		ft_calloc \
 		ft_memcpy \
 		ft_memccpy \
 		ft_memmove \
 		ft_memchr \
 		ft_memcmp \
 		ft_strlen \
+		ft_strdup \
 		ft_strlcpy \
 		ft_strlcat \
 		ft_strchr \
+		ft_strnstr \
 		ft_strrchr \
 		ft_strncmp \
 		ft_atoi \
@@ -36,6 +39,17 @@ FILES = ft_memset \
 		ft_isalnum \
 		ft_isascii \
 		ft_isprint \
+		ft_tolower \
+		ft_toupper \
+		ft_strjoin \
+		ft_putchar_fd \
+		ft_putstr_fd \
+		ft_putendl_fd \
+		ft_putnbr_fd \
+		ft_itoa \
+		ft_substr \
+		ft_strtrim \
+		ft_split
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
@@ -45,11 +59,10 @@ OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
-
 .c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(OBJS_B)
 	$(AR) $@ $^
 
 bonus: $(OBJS_B)

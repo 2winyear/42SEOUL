@@ -6,7 +6,7 @@
 /*   By: seungyel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 04:13:19 by seungyel          #+#    #+#             */
-/*   Updated: 2020/10/18 22:36:03 by seungyel         ###   ########.fr       */
+/*   Updated: 2020/10/22 22:22:51 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,3 @@ int	ft_toupper(int c)
 	}
 	return (c);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%c",ft_toupper('z'));
-	return (0);
-}
-*/
